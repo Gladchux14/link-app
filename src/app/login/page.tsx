@@ -1,4 +1,4 @@
-"use client"; // Ensure this directive is at the very top
+"use client"; 
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -12,14 +12,14 @@ import { auth } from "../config/firebaseConfig";
 const LoginPage: React.FC = () => {
   const router = useRouter();
 
-  // State for handling form input and errors
+ 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [isRegistering, setIsRegistering] = useState(false);
 
-  // Validation function
+ 
   const validateForm = () => {
     let isValid = true;
 
@@ -40,7 +40,7 @@ const LoginPage: React.FC = () => {
     return isValid;
   };
 
-  // Handle login
+
   const handleLogin = async () => {
     if (validateForm()) {
       try {
@@ -48,12 +48,12 @@ const LoginPage: React.FC = () => {
         router.push("/empty");
       } catch (error) {
         console.error("Login error", error);
-        // Optionally set error messages based on specific error codes
+      
       }
     }
   };
 
-  // Handle registration
+
   const handleRegister = async () => {
     if (validateForm()) {
       try {
@@ -61,7 +61,7 @@ const LoginPage: React.FC = () => {
         router.push("/empty");
       } catch (error) {
         console.error("Registration error", error);
-        // Optionally set error messages based on specific error codes
+      
       }
     }
   };
